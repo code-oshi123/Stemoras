@@ -7,6 +7,7 @@ import './style.css'
 
 'use strict';
 
+
 /* =========================
    THEME
 ========================= */
@@ -298,65 +299,169 @@ function initTilt() {
    ORDER FORM
 ========================= */
 
-const FORMSPREE_ID = "xojkqnwy";
 
-function initOrderForm() {
+/* FORM ID FROM FORMSPREE */
 
-  const form = document.getElementById('order-form');
-  if (!form) return;
+const FORMSPREE_ID = "xojkqnwy"; 
 
-  form.addEventListener('submit', async e => {
 
-    e.preventDefault();
+function initOrderForm(){
 
-    const btn = form.querySelector('[type="submit"]');
+const form = document.getElementById("order-form");
 
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-    }
+if(!form) return;
 
-    const data = {
+// Prevent double-binding (this file initializes it in two places).
+if (form.dataset.btBound === '1') return;
+form.dataset.btBound = '1';
 
-      name: form.querySelector('#o-name')?.value || '',
-      phone: form.querySelector('#o-phone')?.value || '',
-      email: form.querySelector('#o-email')?.value || '',
-      flower: form.querySelector('#o-flower')?.value || '',
-      quantity: form.querySelector('#o-qty')?.value || '',
-      occasion: form.querySelector('#o-occasion')?.value || '',
-      colors: [...form.querySelectorAll('input[name="colors"]:checked')]
-        .map(c => c.value).join(', '),
-      message: form.querySelector('#o-msg')?.value || '',
-      date: new Date().toLocaleString()
+form.addEventListener("submit", async function(e){
 
-    };
+e.preventDefault();
 
-    if (FORMSPREE_ID !== 'YOUR_FORM_ID') {
+showToast("Submitting your order…", "✿");
 
-      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+const btn = form.querySelector('[type="submit"], button');
 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+if (btn) {
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+}
 
-      });
 
-    }
+/* COLLECT DATA */
 
-    showToast("Order Submitted Successfully 🌸");
+const data = {
 
-    form.reset();
+name: form.querySelector("#o-name")?.value || "",
+phone: form.querySelector("#o-phone")?.value || "",
+email: form.querySelector("#o-email")?.value || "",
+flower: form.querySelector("#o-flower")?.value || "",
+quantity: form.querySelector("#o-qty")?.value || "",
+occasion: form.querySelector("#o-occasion")?.value || "",
+message: form.querySelector("#o-msg")?.value || "",
+date: new Date().toLocaleString()
 
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = 'Submit Order';
-    }
+};
 
-  });
+
+/* SEND TO FORMSPREE */
+
+try{
+
+const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`,{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json",
+"Accept":"application/json"
+},
+
+body:JSON.stringify(data)
+
+});
+
+
+if(response.ok){
+
+const confirm = document.getElementById("order-confirm");
+if (confirm) confirm.classList.add("show");
+
+const confirmName = document.getElementById("confirm-name");
+if (confirmName) confirmName.textContent = data.name || "friend";
+
+showToast("Order submitted successfully", "✿");
+
+form.reset();
+
+}else{
+
+let msg = "Error sending order";
+try {
+  const json = await response.json();
+  if (json?.errors?.length) msg = json.errors.map(e => e.message).join(", ");
+} catch {}
+showToast(msg, "⚠");
 
 }
+
+}catch(error){
+
+alert("Network error");
+
+}
+
+if (btn) {
+  btn.disabled = false;
+  btn.textContent = "Send Order";
+}
+
+});
+
+}
+
+
+// initOrderForm is called from the main DOMContentLoaded init below.
+// const FORMSPREE_ID = "xojkqnwy";
+
+// function initOrderForm() {
+
+//   const form = document.getElementById('order-form');
+//   if (!form) return;
+
+//   form.addEventListener('submit', async e => {
+
+//     e.preventDefault();
+
+//     const btn = form.querySelector('[type="submit"]');
+
+//     if (btn) {
+//       btn.disabled = true;
+//       btn.textContent = 'Sending...';
+//     }
+
+//     const data = {
+
+//       name: form.querySelector('#o-name')?.value || '',
+//       phone: form.querySelector('#o-phone')?.value || '',
+//       email: form.querySelector('#o-email')?.value || '',
+//       flower: form.querySelector('#o-flower')?.value || '',
+//       quantity: form.querySelector('#o-qty')?.value || '',
+//       occasion: form.querySelector('#o-occasion')?.value || '',
+//       colors: [...form.querySelectorAll('input[name="colors"]:checked')]
+//         .map(c => c.value).join(', '),
+//       message: form.querySelector('#o-msg')?.value || '',
+//       date: new Date().toLocaleString()
+
+//     };
+
+//     if (FORMSPREE_ID !== 'xojkqnwy') {
+
+//       await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+
+//       });
+
+//     }
+
+//     showToast("Order Submitted Successfully 🌸");
+
+//     form.reset();
+
+//     if (btn) {
+//       btn.disabled = false;
+//       btn.textContent = 'Submit Order';
+//     }
+
+//   });
+
+// }
 
 /* =========================
    COUNTERS
