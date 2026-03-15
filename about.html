@@ -1,526 +1,512 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Bloomy Twists</title>
-  </head>
-  <body class="bg-[var(--bg-base)] text-[var(--text-primary)]">
-    <!-- NAVBAR -->
-    <nav id="navbar">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-          >
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
-          Stemora’s
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Shop</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="order.html">Order</a></li>
-        </ul>
-        <div class="nav-right">
-          <button class="theme-toggle" aria-label="Toggle theme"></button>
-          <a href="order.html" class="cart-wrap">
-            <button class="btn btn-primary btn-sm">
-              <svg
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"
-                />
-              </svg>
-              Cart
-            </button>
-            <span class="cart-count">0</span>
-          </a>
-          <button class="menu-btn" id="menu-btn" aria-label="Menu">
-            <svg
-              width="22"
-              height="22"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="index.html">Home</a>
-      <a href="products.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="order.html">Order</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Stemora’s</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --r900:#C10A0A;--r700:#FF1F1F;--r500:#FF4848;--r300:#FF7171;--r100:#FFC2C2;--r50:#FFEAEA;--r25:#FFF6F6;
+      --bg:#FFFBFB;--bg-card:#FFFFFF;--bg-soft:#FFF6F6;--bg-muted:#FFEAEA;
+      --border:#FFD4D4;--border-s:#FFB3B3;
+      --tx:#1A0404;--tx-2:#5C1A1A;--tx-3:#A05050;
+      --accent:var(--r500);--accent-h:var(--r700);--accent-s:var(--r50);
+      --sh-sm:0 1px 4px rgba(193,10,10,.07);--sh-md:0 6px 24px rgba(193,10,10,.12);--sh-lg:0 16px 48px rgba(193,10,10,.17);
+      --rad-sm:8px;--rad-md:16px;--rad-lg:24px;--rad-xl:36px;--rad-full:9999px;
+    }
+    [data-theme="dark"]{
+      --bg:#0F0202;--bg-card:#1C0505;--bg-soft:#250707;--bg-muted:#2F0A0A;
+      --border:#4A1515;--border-s:#7A2222;
+      --tx:#FFE8E8;--tx-2:#FFAAAA;--tx-3:#CC7777;
+      --accent:var(--r300);--accent-h:var(--r100);--accent-s:#2A0808;
+      --sh-sm:0 1px 4px rgba(0,0,0,.45);--sh-md:0 6px 24px rgba(0,0,0,.55);--sh-lg:0 16px 48px rgba(0,0,0,.65);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.65;transition:background .35s,color .35s}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.1}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--r100);color:var(--r900)}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--r300);border-radius:3px}
+    .wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem}
+    .sec{padding:6rem 0}
+    .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--tx);line-height:1.12}
+    .sec-sub{font-size:.92rem;color:var(--tx-3);line-height:1.75;margin-top:.65rem;max-width:480px}
+    .divider{width:44px;height:2px;background:var(--accent);border-radius:2px;margin:.85rem 0}
+    .wave{line-height:0}.wave svg{display:block}
+    /* Navbar */
+    #navbar{position:fixed;inset:0 0 auto 0;z-index:200;height:68px;display:flex;align-items:center;transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(18px);box-shadow:var(--sh-sm);border-bottom:1px solid var(--border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1160px;margin:0 auto;padding:0 1.5rem}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:.45rem;letter-spacing:.02em}
+    .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--tx-2);position:relative;transition:color .2s}
+    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--accent);transition:width .25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-right{display:flex;align-items:center;gap:.85rem}
+    .theme-toggle{width:40px;height:40px;border-radius:var(--rad-full);border:1.5px solid var(--border);background:var(--bg-card);color:var(--tx-2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:border-color .2s,transform .2s,background .2s}
+    .theme-toggle:hover{border-color:var(--accent);transform:scale(1.08)}
+    .ham-btn{display:none;background:none;border:none;cursor:pointer;color:var(--tx);padding:.25rem}
+    .mob-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:var(--bg-card);border-bottom:1px solid var(--border);box-shadow:var(--sh-md);padding:1.25rem;flex-direction:column;gap:.25rem}
+    .mob-menu.open{display:flex}
+    .mob-menu a{padding:.85rem 1rem;border-radius:var(--rad-sm);font-weight:500;font-size:.9rem;color:var(--tx-2);transition:background .15s,color .15s}
+    .mob-menu a:hover{background:var(--bg-soft);color:var(--accent)}
+    .mob-menu a.active{color:var(--accent);font-weight:700}
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.85rem;border-radius:var(--rad-full);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;cursor:pointer;border:none;white-space:nowrap;transition:transform .22s,box-shadow .22s,background .22s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 18px rgba(255,72,72,.32)}
+    .btn-primary:hover{background:var(--accent-h);box-shadow:0 8px 28px rgba(255,72,72,.46)}
+    .btn-outline{background:transparent;border:1.5px solid var(--border-s);color:var(--tx)}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-s)}
+    .btn-lg{padding:1rem 2.4rem;font-size:1rem}
+    .btn-sm{padding:.5rem 1.2rem;font-size:.8rem}
+    /* Scroll reveal */
+    .reveal{opacity:0;transform:translateY(36px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+    .reveal.in{opacity:1;transform:none}
+    .reveal-l{opacity:0;transform:translateX(-38px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+    .reveal-l.in{opacity:1;transform:none}
+    .reveal-r{opacity:0;transform:translateX(38px);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+    .reveal-r.in{opacity:1;transform:none}
+    .sd1{transition-delay:.08s}.sd2{transition-delay:.18s}.sd3{transition-delay:.28s}.sd4{transition-delay:.38s}
+    /* Hero */
+    .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px}
+    .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 68% 56% at 20% 35%,rgba(255,194,194,.28) 0%,transparent 62%),radial-gradient(ellipse 52% 48% at 80% 25%,rgba(255,72,72,.14) 0%,transparent 58%),var(--bg)}
+    [data-theme="dark"] .hero-bg{background:radial-gradient(ellipse 68% 56% at 20% 35%,rgba(193,10,10,.22) 0%,transparent 62%),radial-gradient(ellipse 52% 48% at 80% 25%,rgba(255,72,72,.1) 0%,transparent 58%),var(--bg)}
+    .hero-content{position:relative;z-index:2;max-width:580px}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    .a1{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .15s both}
+    .a2{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .32s both}
+    .a3{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .48s both}
+    .a4{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .64s both}
+    .a5{animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .78s both}
+    .hero-title{font-size:clamp(3.2rem,9vw,6.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--tx)}
+    .hero-title em{font-style:italic;color:var(--accent)}
+    .hero-sub{font-size:clamp(.95rem,2vw,1.1rem);color:var(--tx-3);max-width:440px;line-height:1.78;margin:1.4rem 0 2.5rem}
+    .hero-visual{position:absolute;right:-3%;top:50%;transform:translateY(-50%);width:min(44%,520px);aspect-ratio:1;border-radius:50% 40% 58% 45%/46% 54% 42% 58%;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh-lg);animation:floatBlob 8s ease-in-out infinite}
+    .hero-visual img{width:100%;height:100%;object-fit:cover}
+    @keyframes floatBlob{0%,100%{transform:translateY(calc(-50% + 0px))}50%{transform:translateY(calc(-50% - 18px))}}
+    .petal-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+    .petal{position:absolute;opacity:0;user-select:none;animation:petalRise var(--dur) var(--dly) ease-in-out infinite}
+    @keyframes petalRise{0%{opacity:0;transform:translateY(0) rotate(0deg) translateX(0)}12%{opacity:.65}85%{opacity:.3}100%{opacity:0;transform:translateY(-100vh) rotate(400deg) translateX(var(--dx))}}
+    /* Marquee */
+    .marquee{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.85rem 0}
+    .marq-track{display:flex;gap:3rem;white-space:nowrap;animation:marqScroll 26s linear infinite}
+    .marq-track span{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3)}
+    .marq-dot{color:var(--accent)!important}
+    @keyframes marqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    /* Story */
+    .story-quote{border-left:3.5px solid var(--r300);padding-left:1.1rem;margin:1.25rem 0}
+    .stat-pill{text-align:center;padding:.9rem 1rem;border-radius:var(--rad-md);background:var(--bg-soft);border:1px solid var(--border)}
+    .stat-val{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;color:var(--accent);line-height:1}
+    .stat-lbl{font-size:.72rem;font-weight:600;color:var(--tx-3);margin-top:.25rem}
+    /* Team */
+    .team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad-xl);overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,border-color .3s}
+    .team-card:hover{transform:translateY(-12px) scale(1.012);box-shadow:var(--sh-lg);border-color:var(--border-s)}
+    .avatar-wrap{transition:transform .3s,box-shadow .3s}
+    .team-card:hover .avatar-wrap{transform:scale(1.06) rotate(2deg);box-shadow:0 12px 32px rgba(193,10,10,.22)}
+    .avatar-circle{width:120px;height:120px;border-radius:50%;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid var(--border-s)}
+    .skill-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .8rem;border-radius:var(--rad-full);font-size:.72rem;font-weight:700}
+    /* Features */
+    .feat-card{border-radius:var(--rad-xl);padding:1.75rem 1.5rem;text-align:center;border:1px solid var(--border);background:var(--bg-soft);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .28s,border-color .28s}
+    .feat-card:hover{transform:translateY(-10px);box-shadow:var(--sh-lg);background:var(--bg-card);border-color:var(--border-s)}
+    .feat-icon{width:62px;height:62px;border-radius:var(--rad-md);display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 1.1rem;background:var(--bg-muted)}
+    @keyframes iconBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+    .feat-card:hover .feat-icon{animation:iconBounce .55s ease}
+    /* Steps */
+    .step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad-xl);padding:1.75rem 1.4rem;text-align:center;position:relative;z-index:1;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}
+    .step-card:hover{transform:translateY(-8px) scale(1.025);box-shadow:var(--sh-lg);border-color:var(--border-s)}
+    .step-num{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;margin:0 auto 1rem}
+    /* CTA */
+    .cta-wrap{border-radius:var(--rad-xl);overflow:hidden;position:relative}
+    .cta-grad{background:linear-gradient(135deg,var(--r900) 0%,var(--r700) 30%,var(--r500) 65%,var(--r300) 100%)}
+    .cta-btn{background:white;color:var(--r900);font-family:'DM Sans',sans-serif;font-weight:800;transition:transform .24s,box-shadow .24s,background .22s}
+    .cta-btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 18px 44px rgba(255,255,255,.32);background:var(--r25)}
+    /* Footer */
+    footer{background:var(--bg-card);border-top:1px solid var(--border);padding:3.5rem 0 2rem}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:3rem;margin-bottom:2.5rem}
+    .ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:.4rem;margin-bottom:.7rem}
+    .ft-about{font-size:.83rem;color:var(--tx-3);line-height:1.7;max-width:270px}
+    .ft-hed{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);margin-bottom:.9rem}
+    .ft-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+    .ft-links a{font-size:.875rem;color:var(--tx-2);transition:color .2s}
+    .ft-links a:hover{color:var(--accent)}
+    .ft-contact p{font-size:.84rem;color:var(--tx-2);margin-bottom:.48rem;display:flex;align-items:center;gap:.5rem}
+    .ft-bot{padding-top:1.75rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .ft-bot p{font-size:.78rem;color:var(--tx-3)}
+    /* Grid helpers */
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.75rem}
+    .lk-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem 1rem;border-radius:var(--rad-full);font-size:.76rem;font-weight:700;background:var(--bg-muted);border:1px solid var(--border-s);color:var(--accent)}
+    /* Responsive */
+    @media(max-width:900px){.nav-links{display:none}.ham-btn{display:flex}.hero-visual{display:none}.ft-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:720px){.team-grid-wrap,.story-grid{grid-template-columns:1fr!important;gap:3rem!important}}
+    @media(max-width:600px){.sec{padding:4rem 0}.hero-title{font-size:clamp(2.8rem,13vw,4rem)}.ft-grid{grid-template-columns:1fr;gap:2rem}.g2,.g3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-wrap">
+    <a href="index.html" class="nav-logo">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Bloomy Twists
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="order.html">Order</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+      <a href="products.html"><button class="btn btn-primary btn-sm">Shop Now</button></a>
+      <button class="ham-btn" id="ham-btn" aria-label="Menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
     </div>
+  </div>
+</nav>
+<div class="mob-menu" id="mob-menu">
+  <a href="index.html">Home</a>
+  <a href="products.html">Shop</a>
+  <a href="about.html" class="active">About</a>
+  <a href="order.html">Order</a>
+</div>
 
-    <!-- HERO SECTION -->
-    <section
-      class="section pt-32 pb-16 relative overflow-hidden"
-      style="
-        background: radial-gradient(circle at top left, #ffe4f1 0, transparent 55%),
-                    radial-gradient(circle at top right, #e9ddff 0, transparent 55%),
-                    var(--bg-base);
-      "
-    >
-      <div class="container relative z-10">
-        <div class="max-w-3xl mx-auto text-center reveal">
-          <p class="section-eyebrow text-[var(--accent)]">Our Story</p>
-          <h1
-            class="section-title text-[clamp(2.3rem,4vw,3.2rem)] text-[var(--text-primary)] mb-4"
-          >
-            About Bloomy Twists
-          </h1>
-          <p class="section-subtitle text-base md:text-lg">
-            Handmade flowers crafted with love in Sri Lanka.
-          </p>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="petal-field" id="petals"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="a1"><span class="lk-badge">&#127473;&#127472;&nbsp; Gampaha, Sri Lanka</span></div>
+      <h1 class="hero-title a2" style="margin-top:1.25rem">About<br/><em>Stemora’s</em><br/>Shop</h1>
+      <p class="hero-sub a3">Handmade flowers crafted with love in Sri Lanka — blooms that never fade, made just for you.</p>
+      <div class="a4" style="display:flex;flex-wrap:wrap;gap:1rem">
+        <a href="products.html"><button class="btn btn-primary btn-lg">Shop Flowers</button></a>
+        <a href="#story"><button class="btn btn-outline btn-lg">Read Our Story &#8595;</button></a>
+      </div>
+      <div class="a5" style="display:flex;flex-wrap:wrap;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1">100%</div><div style="font-size:.76rem;font-weight:600;color:var(--tx-3);margin-top:.2rem">Handmade</div></div>
+        <div style="width:1px;background:var(--border)"></div>
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1">Est.</div><div style="font-size:.76rem;font-weight:600;color:var(--tx-3);margin-top:.2rem">2026</div></div>
+        <div style="width:1px;background:var(--border)"></div>
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1">&#8734;</div><div style="font-size:.76rem;font-weight:600;color:var(--tx-3);margin-top:.2rem">Lasting beauty</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual"><img src="https://images.unsplash.com/photo-1490750967868-88df5691cc22?w=700&q=85" alt="Handmade flowers" loading="eager"/></div>
+</section>
 
-        <div
-          class="mt-10 grid gap-6 md:grid-cols-3 max-w-4xl mx-auto text-sm text-[var(--text-muted)]"
-        >
-          <div
-            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-1"
-          >
-            ✿ Soft pipe-cleaner petals, inspired by real blooms.
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marq-track">
+    <span>&#10033; Handmade with Love</span><span class="marq-dot"> &middot; </span>
+    <span>Made in Sri Lanka</span><span class="marq-dot"> &middot; </span>
+    <span>Flowers That Never Fade</span><span class="marq-dot"> &middot; </span>
+    <span>&#10040; Unique Designs</span><span class="marq-dot"> &middot; </span>
+    <span>Perfect for Gifts</span><span class="marq-dot"> &middot; </span>
+    <span>Crafted with Care</span><span class="marq-dot"> &middot; </span>
+    <span>&#10033; Handmade with Love</span><span class="marq-dot"> &middot; </span>
+    <span>Made in Sri Lanka</span><span class="marq-dot"> &middot; </span>
+    <span>Flowers That Never Fade</span><span class="marq-dot"> &middot; </span>
+    <span>&#10040; Unique Designs</span><span class="marq-dot"> &middot; </span>
+    <span>Perfect for Gifts</span><span class="marq-dot"> &middot; </span>
+    <span>Crafted with Care</span><span class="marq-dot"> &middot; </span>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<section id="story" class="sec" style="background:var(--bg)">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center" class="story-grid">
+      <div class="reveal-l">
+        <div style="position:relative">
+          <div style="border-radius:var(--rad-xl);overflow:hidden;aspect-ratio:4/5;background:var(--bg-soft);border:1px solid var(--border);box-shadow:var(--sh-lg)">
+            <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=85" alt="Handcrafting flowers" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
           </div>
-          <div
-            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-2"
-          >
-            ❀ A cosy craft studio in Gampaha, Sri Lanka.
+          <div style="position:absolute;bottom:-1.25rem;right:-1.25rem;width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--r900),var(--r500));color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;box-shadow:var(--sh-md)">
+            <span style="font-size:.65rem;letter-spacing:.08em">EST.</span><span style="font-size:1.3rem;line-height:1">2026</span>
           </div>
-          <div
-            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-3"
-          >
-            ✾ Flowers that never fade, made for meaningful gifts.
+          <div style="position:absolute;top:1.25rem;left:-1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rad-md);padding:.85rem 1.1rem;box-shadow:var(--sh-md);display:flex;align-items:center;gap:.65rem">
+            <span style="font-size:1.5rem">&#10048;</span>
+            <div><div style="font-size:.7rem;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase">Founded</div><div style="font-size:.82rem;font-weight:600;color:var(--tx)">Gampaha, LK</div></div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="reveal-r">
+        <p class="eyebrow">Our Beginning</p>
+        <h2 class="sec-title" style="margin-top:.4rem">Where Every Petal<br/><em style="color:var(--accent)">Tells a Story</em></h2>
+        <div class="divider"></div>
+        <blockquote class="story-quote"><p style="font-style:italic;font-size:.95rem;font-weight:500;color:var(--tx-2)">"What started as a simple hobby in Gampaha blossomed into something truly special."</p></blockquote>
+        <p style="font-size:.9rem;line-height:1.82;color:var(--tx-2);margin-bottom:.9rem">Stemora’s was founded in <strong style="color:var(--accent)">2026 in Gampaha, Sri Lanka</strong> by Kusum Perera — a passionate crafter who has always loved creating handmade art, especially pipe cleaner flowers. Her journey began with a single hand-twisted rose.</p>
+        <p style="font-size:.9rem;line-height:1.82;color:var(--tx-2);margin-bottom:.9rem">Each flower is <strong style="color:var(--r700)">carefully designed and handcrafted</strong> to bring beauty that never fades. No two pieces are exactly alike — every bloom carries the warmth and personality of the hands that made it.</p>
+        <p style="font-size:.9rem;line-height:1.82;color:var(--tx-2);margin-bottom:2rem">Stemora’s was created to share these unique flowers with people who seek <strong style="color:var(--accent)">meaningful gifts and lasting decorations</strong> — made with patience, love, and creativity.</p>
+        <div class="g3">
+          <div class="stat-pill"><div class="stat-val">100%</div><div class="stat-lbl">Handmade</div></div>
+          <div class="stat-pill"><div class="stat-val">&#8734;</div><div class="stat-lbl">Lasting</div></div>
+          <div class="stat-pill"><div class="stat-val">&#10048;</div><div class="stat-lbl">With Love</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- OUR STORY -->
-    <section class="section py-12 md:py-16">
-      <div class="container max-w-5xl">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-          <div class="reveal">
-            <p class="section-eyebrow">Bloomy Twists in Sri Lanka</p>
-            <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)] mb-4">
-              Crafted from a small dream in Gampaha.
-            </h2>
-            <p class="section-subtitle mb-4">
-              Bloomy Twists was founded in 2026 in Gampaha, Sri Lanka. What began as a simple
-              hobby quickly grew into a cosy handmade flower shop.
-            </p>
-            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-3">
-              Our founder, Kusum Perera, has always loved creating handmade crafts, especially pipe
-              cleaner flowers. Each new bloom started as a curious experiment — twisting, shaping
-              and layering soft stems until they looked like real petals.
-            </p>
-            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-3">
-              As friends, neighbours and family started requesting her creations for birthdays,
-              weddings and home decor, Bloomy Twists slowly turned into a small business filled with
-              colour and heart.
-            </p>
-            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">
-              Every flower is carefully designed and handcrafted to bring beauty that never fades.
-              Bloomy Twists exists to share these unique handmade flowers with people who want
-              meaningful gifts and decorations that feel personal and lasting.
-            </p>
-          </div>
+<div class="wave" style="background:var(--bg)"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C360,0 1080,80 1440,40 L1440,60 L0,60 Z" fill="var(--bg-soft)"/></svg></div>
 
-          <div class="reveal reveal-delay-1">
-            <div
-              class="relative rounded-3xl bg-gradient-to-br from-pink-100 via-rose-50 to-purple-100 p-1 shadow-[0_18px_45px_rgba(244,114,182,0.35)]"
-            >
-              <div
-                class="rounded-3xl overflow-hidden bg-white flex items-center justify-center h-full min-h-[260px]"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1490750967868-88df5691cc22?w=700&q=85"
-                  alt="Handmade pipe-cleaner flowers"
-                  class="w-full h-full object-cover"
-                />
-              </div>
+<!-- TEAM -->
+<section id="team" class="sec" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:3.5rem">
+      <p class="eyebrow">The People Behind the Petals</p>
+      <h2 class="sec-title" style="margin-top:.35rem">Meet Our Team</h2>
+      <p class="sec-sub" style="margin:.6rem auto 0;text-align:center">Mother and Daughter with a shared dream — to bring handcrafted beauty to the world.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:860px;margin:0 auto" class="team-grid-wrap">
 
-              <div
-                class="absolute -bottom-6 -left-4 bg-white/90 border border-[var(--border)] rounded-2xl px-4 py-3 shadow-md text-xs md:text-sm flex items-center gap-3"
-              >
-                <span class="text-lg">🌸</span>
-                <div>
-                  <p class="font-semibold text-[var(--text-primary)]">
-                    Flowers that never fade
-                  </p>
-                  <p class="text-[var(--text-muted)]">
-                    Made with soft stems and bright colours, one twist at a time.
-                  </p>
-                </div>
-              </div>
+      <!-- Kusum -->
+      <div class="team-card reveal sd1">
+        <div style="height:5px;background:linear-gradient(90deg,var(--r900),var(--r500),var(--r100))"></div>
+        <div style="padding:2.25rem;display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div class="avatar-wrap" style="margin-bottom:1.5rem;position:relative">
+            <!-- REPLACE: swap div below with <img src="kusum.jpg" alt="Kusum Perera" style="width:100%;height:100%;object-fit:cover"/> -->
+            <div class="avatar-circle" style="background:linear-gradient(135deg,var(--r50),var(--r100))">
+              <span style="font-size:3rem">&#128119;&#8205;&#127807;</span>
+              <span style="font-size:.65rem;font-weight:600;color:var(--tx-3);margin-top:.2rem"><img src="kusum.jpg" alt="Kusum Perera" style="width:100%;height:100%;object-fit:cover"/></span>
             </div>
+            <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);padding:.28rem .9rem;border-radius:var(--rad-full);background:linear-gradient(135deg,var(--r900),var(--r500));color:white;font-size:.68rem;font-weight:700;white-space:nowrap;box-shadow:var(--sh-sm)">Founder</div>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--tx);margin-top:.5rem">Kusum Perera</h3>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:.3rem 0 1.1rem">Founder &amp; Lead Creator</p>
+          <p style="font-size:.87rem;line-height:1.75;color:var(--tx-2);margin-bottom:1.5rem">Kusum Perera is the <strong style="color:var(--accent)">creative heart</strong> behind Bloomy Twists. She designs and handcrafts each pipe cleaner flower bouquet with patience and creativity. Her passion for handmade crafts inspired the creation of the Bloomy Twists store.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center">
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r700)">&#127912; Flower Design</span>
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r500)">&#10047; Handcrafting</span>
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r300)">&#128161; Creative Vision</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FOUNDER & CO-FOUNDER -->
-    <section
-      class="section py-12 md:py-16"
-      style="background: linear-gradient(to bottom, #fff5fb, var(--bg-base));"
-    >
-      <div class="container max-w-5xl">
-        <div class="text-center mb-10 reveal">
-          <p class="section-eyebrow">The hearts behind Bloomy Twists</p>
-          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
-            Meet the makers
-          </h2>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-2">
-          <!-- Founder -->
-          <article
-            class="reveal group rounded-3xl bg-white border border-[var(--border)] shadow-[0_18px_40px_rgba(244,114,182,0.25)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(236,72,153,0.35)]"
-          >
-            <div class="flex flex-col h-full">
-              <div class="relative h-64 overflow-hidden">
-                <img
-                  src="public/founder-kusum.jpg"
-                  alt="Founder Kusum Perera"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-rose-500/50 via-transparent to-transparent opacity-60"
-                ></div>
-              </div>
-              <div class="p-6 md:p-7 flex-1 flex flex-col gap-3">
-                <div class="flex items-center justify-between gap-2">
-                  <div>
-                    <h3 class="font-display text-xl text-[var(--text-primary)]">
-                      Kusum Perera
-                    </h3>
-                    <p class="text-xs uppercase tracking-[0.18em] text-rose-500 font-semibold">
-                      Founder · Bloomy Twists
-                    </p>
-                  </div>
-                  <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rose-100 text-rose-500 text-xl"
-                    >✿</span
-                  >
-                </div>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
-                  Kusum Perera is the creative heart behind Bloomy Twists. She designs and
-                  handcrafts each pipe cleaner flower bouquet with patience and creativity. Her love
-                  for handmade crafts turned a simple hobby into a colourful flower shop.
-                </p>
-                <p class="text-xs text-[var(--text-muted)]">
-                  Every bouquet carries a little piece of her story — hours of careful twisting,
-                  shaping and arranging until each flower feels just right.
-                </p>
-              </div>
+      <!-- Ushani -->
+      <div class="team-card reveal sd2">
+        <div style="height:5px;background:linear-gradient(90deg,var(--r100),var(--r500),var(--r900))"></div>
+        <div style="padding:2.25rem;display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div class="avatar-wrap" style="margin-bottom:1.5rem;position:relative">
+            <!-- REPLACE: swap div below with <img src="ushani.jpg" alt="Ushani Perera" style="width:100%;height:100%;object-fit:cover"/> -->
+            <div class="avatar-circle" style="background:linear-gradient(135deg,var(--r100),var(--r50))">
+              <span style="font-size:3rem">&#128105;&#8205;&#128187;</span>
+              <span style="font-size:.65rem;font-weight:600;color:var(--tx-3);margin-top:.2rem"><img src="ushani.jpg" alt="Ushani Perera" style="width:100%;height:100%;object-fit:cover"/></span>
             </div>
-          </article>
-
-          <!-- Co‑Founder -->
-          <article
-            class="reveal reveal-delay-1 group rounded-3xl bg-white border border-[var(--border)] shadow-[0_16px_34px_rgba(129,140,248,0.22)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_52px_rgba(129,140,248,0.35)]"
-          >
-            <div class="flex flex-col h-full">
-              <div class="relative h-64 overflow-hidden">
-                <img
-                  src="public/cofounder-ushani.jpg"
-                  alt="Co‑Founder Ushani Perera"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-indigo-500/50 via-transparent to-transparent opacity-60"
-                ></div>
-              </div>
-              <div class="p-6 md:p-7 flex-1 flex flex-col gap-3">
-                <div class="flex items-center justify-between gap-2">
-                  <div>
-                    <h3 class="font-display text-xl text-[var(--text-primary)]">
-                      Ushani Perera
-                    </h3>
-                    <p class="text-xs uppercase tracking-[0.18em] text-indigo-500 font-semibold">
-                      Co‑Founder · Digital Studio
-                    </p>
-                  </div>
-                  <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 text-indigo-500 text-xl"
-                    >❀</span
-                  >
-                </div>
-                <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
-                  Ushani Perera manages the digital side of Bloomy Twists. She developed the
-                  website, looks after marketing, and connects with customers online.
-                </p>
-                <p class="text-xs text-[var(--text-muted)]">
-                  Her goal is to gently bridge handmade craft with modern online shopping, so more
-                  people can discover the colourful bouquets created in their Sri Lankan studio.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE OUR FLOWERS -->
-    <section class="section py-12 md:py-16">
-      <div class="container max-w-5xl">
-        <div class="text-center mb-10 reveal">
-          <p class="section-eyebrow">Why people love our blooms</p>
-          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
-            Why choose our flowers
-          </h2>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-2">
-          <div
-            class="reveal group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
-          >
-            <div
-              class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
-            >
-              ✿
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
-                Handmade with love
-              </h3>
-              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                Every petal is twisted by hand in our home studio, not mass‑produced in a factory.
-              </p>
-            </div>
+            <div style="position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);padding:.28rem .9rem;border-radius:var(--rad-full);background:linear-gradient(135deg,var(--r500),var(--r900));color:white;font-size:.68rem;font-weight:700;white-space:nowrap;box-shadow:var(--sh-sm)">Co-Founder</div>
           </div>
-
-          <div
-            class="reveal reveal-delay-1 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
-          >
-            <div
-              class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
-            >
-              ♾
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
-                Long‑lasting flowers
-              </h3>
-              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                No watering, no wilting — just soft, colourful flowers that keep their shape for
-                years.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="reveal reveal-delay-2 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
-          >
-            <div
-              class="w-11 h-11 rounded-2xl bg-violet-100 text-violet-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
-            >
-              ✨
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
-                Unique handmade designs
-              </h3>
-              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                No two bouquets are exactly the same — each one carries its own little personality.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="reveal reveal-delay-3 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
-          >
-            <div
-              class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
-            >
-              🎁
-            </div>
-            <div>
-              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
-                Perfect for gifts & decor
-              </h3>
-              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                Thoughtful presents for birthdays, anniversaries, desks and cosy corners at home.
-              </p>
-            </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--tx);margin-top:.5rem">Ushani Perera</h3>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:.3rem 0 1.1rem">Co-Founder &amp; Digital Manager</p>
+          <p style="font-size:.87rem;line-height:1.75;color:var(--tx-2);margin-bottom:1.5rem">Ushani Perera manages the <strong style="color:var(--accent)">digital side</strong> of Bloomy Twists. She developed the website, handles marketing, and communicates with customers online. Her goal is to help bring the handmade creations of Bloomy Twists to a wider audience.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center">
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r700)">&#127760; Web Development</span>
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r500)">&#128226; Marketing</span>
+            <span class="skill-pill" style="background:var(--bg-muted);color:var(--r300)">&#128172; Customer Care</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- WORK PROCESS -->
-    <section
-      class="section py-12 md:py-16"
-      style="background: linear-gradient(to right, #fdf2ff, #fefcf9);"
-    >
-      <div class="container max-w-5xl">
-        <div class="text-center mb-10 reveal">
-          <p class="section-eyebrow">How your flowers are made</p>
-          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
-            Our work process
-          </h2>
-        </div>
+    </div>
+  </div>
+</section>
 
-        <div
-          class="grid gap-6 md:grid-cols-4 text-center text-xs md:text-sm text-[var(--text-secondary)]"
-        >
-          <div
-            class="reveal flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
-          >
-            <div
-              class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center text-lg mb-1"
-            >
-              1
-            </div>
-            <h3 class="font-semibold text-[var(--text-primary)]">
-              Design idea
-            </h3>
-            <p class="leading-relaxed">
-              We sketch colour palettes and bouquet shapes inspired by real flowers.
-            </p>
-          </div>
+<div class="wave" style="background:var(--bg-soft)"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,20 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--bg)"/></svg></div>
 
-          <div
-            class="reveal reveal-delay-1 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
-          >
-            <div
-              class="w-10 h-10 rounded-full bg-purple-100 text-purple-500 flex items-center justify-center text-lg mb-1"
-            >
-              2
-            </div>
-            <h3 class="font-semibold text-[var(--text-primary)]">
-              Handmade crafting
-            </h3>
-            <p class="leading-relaxed">
-              Pipe cleaners are twisted, layered and fluffed by hand to form soft petals.
-            </p>
-          </div>
+<!-- WHY CHOOSE US -->
+<section id="why" class="sec" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:3.5rem">
+      <p class="eyebrow">What Makes Us Different</p>
+      <h2 class="sec-title" style="margin-top:.35rem">Why Choose Our Flowers?</h2>
+      <p class="sec-sub" style="margin:.6rem auto 0;text-align:center">Every bloom from Bloomy Twists is more than just a decoration.</p>
+    </div>
+    <div class="g4">
+      <div class="feat-card reveal sd1">
+        <div class="feat-icon" style="background:linear-gradient(135deg,var(--r50),var(--r100))">&#10084;&#65039;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Handmade with Love</h3>
+        <p style="font-size:.83rem;line-height:1.65;color:var(--tx-3)">Every petal is carefully hand-twisted with full attention and heart. No machines — pure craftsmanship from start to finish.</p>
+      </div>
+      <div class="feat-card reveal sd2">
+        <div class="feat-icon" style="background:linear-gradient(135deg,var(--r100),var(--r50))">&#8734;&#65039;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Long-Lasting Flowers</h3>
+        <p style="font-size:.83rem;line-height:1.65;color:var(--tx-3)">Unlike real flowers, ours bloom forever — no watering, no wilting. They last a lifetime and make timeless keepsakes.</p>
+      </div>
+      <div class="feat-card reveal sd3">
+        <div class="feat-icon" style="background:linear-gradient(135deg,var(--r50),var(--r100))">&#127912;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Unique Designs</h3>
+        <p style="font-size:.83rem;line-height:1.65;color:var(--tx-3)">No two pieces are exactly alike. Each design is original, creative, and completely one of a kind — truly unique every time.</p>
+      </div>
+      <div class="feat-card reveal sd4">
+        <div class="feat-icon" style="background:linear-gradient(135deg,var(--r100),var(--r50))">&#127873;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Perfect for Gifts</h3>
+        <p style="font-size:.83rem;line-height:1.65;color:var(--tx-3)">Ideal for birthdays, anniversaries, and home decor. A meaningful gift that outlasts the occasion and always delights.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div
-            class="reveal reveal-delay-2 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
-          >
-            <div
-              class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center text-lg mb-1"
-            >
-              3
-            </div>
-            <h3 class="font-semibold text-[var(--text-primary)]">
-              Quality checking
-            </h3>
-            <p class="leading-relaxed">
-              Each bouquet is checked for shape, colour balance and tiny finishing details.
-            </p>
-          </div>
+<div class="wave" style="background:var(--bg)"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,50 C360,10 1080,60 1440,20 L1440,60 L0,60 Z" fill="var(--bg-soft)"/></svg></div>
 
-          <div
-            class="reveal reveal-delay-3 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
-          >
-            <div
-              class="w-10 h-10 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center text-lg mb-1"
-            >
-              4
-            </div>
-            <h3 class="font-semibold text-[var(--text-primary)]">
-              Delivery to customers
-            </h3>
-            <p class="leading-relaxed">
-              Bouquets are carefully packaged and sent to your door, ready to gift or display.
-            </p>
-          </div>
+<!-- WORK PROCESS -->
+<section id="process" class="sec" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="text-center reveal" style="margin-bottom:3.5rem">
+      <p class="eyebrow">From Idea to Doorstep</p>
+      <h2 class="sec-title" style="margin-top:.35rem">How We Create for You</h2>
+      <p class="sec-sub" style="margin:.6rem auto 0;text-align:center">Every Bloomy Twists flower passes through four thoughtful steps of love and care.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.75rem">
+      <div class="step-card reveal sd1">
+        <div class="step-num" style="background:linear-gradient(135deg,var(--r900),var(--r700))">1</div>
+        <div style="font-size:2.5rem;margin-bottom:.9rem">&#128161;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Design Idea</h3>
+        <p style="font-size:.82rem;line-height:1.65;color:var(--tx-3)">Every flower starts with a creative concept — sketching shapes, selecting colours, and planning the perfect design.</p>
+      </div>
+      <div class="step-card reveal sd2">
+        <div class="step-num" style="background:linear-gradient(135deg,var(--r700),var(--r500))">2</div>
+        <div style="font-size:2.5rem;margin-bottom:.9rem">&#127744;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Handmade Crafting</h3>
+        <p style="font-size:.82rem;line-height:1.65;color:var(--tx-3)">Kusum hand-twists every pipe cleaner petal, carefully shaping each bloom with patience and artistic skill.</p>
+      </div>
+      <div class="step-card reveal sd3">
+        <div class="step-num" style="background:linear-gradient(135deg,var(--r500),var(--r300))">3</div>
+        <div style="font-size:2.5rem;margin-bottom:.9rem">&#9989;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Quality Checking</h3>
+        <p style="font-size:.82rem;line-height:1.65;color:var(--tx-3)">Each bouquet is carefully reviewed to meet our quality standards before packaging and shipping begins.</p>
+      </div>
+      <div class="step-card reveal sd4">
+        <div class="step-num" style="background:linear-gradient(135deg,var(--r300),var(--r100));color:var(--r900)">4</div>
+        <div style="font-size:2.5rem;margin-bottom:.9rem">&#128230;</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--tx);margin-bottom:.5rem">Delivery to Customers</h3>
+        <p style="font-size:.82rem;line-height:1.65;color:var(--tx-3)">Beautifully packaged and delivered to your door — ready to brighten your space or delight someone special.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--bg-soft)"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,30 C360,70 1080,0 1440,44 L1440,60 L0,60 Z" fill="var(--bg)"/></svg></div>
+
+<!-- CALL TO ACTION -->
+<section id="cta" class="sec" style="background:var(--bg)">
+  <div class="wrap" style="max-width:800px">
+    <div class="cta-wrap reveal">
+      <div class="cta-grad" style="padding:4.5rem 3rem;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 110%,rgba(255,255,255,.14) 0%,transparent 65%);pointer-events:none"></div>
+        <div style="font-size:2.5rem;margin-bottom:1.25rem;position:relative;z-index:1">&#10048; &#10040; &#10048;</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:700;color:white;margin-bottom:1rem;line-height:1.08;position:relative;z-index:1;text-shadow:0 2px 20px rgba(0,0,0,.15)">Discover Flowers<br/><em>That Never Fade.</em></h2>
+        <p style="color:rgba(255,255,255,.88);max-width:400px;margin:.75rem auto 2.5rem;font-size:clamp(.9rem,2vw,1.05rem);line-height:1.7;position:relative;z-index:1">Browse our handcrafted collection and find the perfect bloom — made with love, just for you.</p>
+        <a href="products.html" style="position:relative;z-index:1">
+          <button class="btn cta-btn btn-lg" style="font-size:1rem">Shop Our Flowers &#8594;</button>
+        </a>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.76);position:relative;z-index:1">
+          <span>&#127473;&#127472; Made in Sri Lanka</span>
+          <span>Handcrafted with Love</span>
+          <span>Unique Every Time</span>
+          <span>Fast Delivery</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CALL TO ACTION -->
-    <section class="section py-12 md:py-16">
-      <div class="container max-w-4xl">
-        <div
-          class="reveal rounded-3xl border border-[var(--border)] bg-gradient-to-r from-rose-50 via-purple-50 to-amber-50 shadow-[0_20px_50px_rgba(244,114,182,0.25)] px-6 py-10 md:px-10 md:py-12 text-center"
-        >
-          <p class="section-eyebrow mb-2">Ready to browse?</p>
-          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)] mb-3">
-            Discover flowers that never fade.
-          </h2>
-          <p class="section-subtitle mb-6 max-w-xl mx-auto">
-            Explore our collection of handmade pipe cleaner flowers — crafted in Sri Lanka, shipped
-            with care, and perfect for gifting or decorating your favourite spaces.
-          </p>
-          <a href="products.html" class="btn btn-primary btn-lg">
-            Shop Our Flowers
-          </a>
-        </div>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Bloomy Twists</div>
+        <p class="ft-about">Handmade pipe cleaner flowers from Gampaha, Sri Lanka — crafted with love by Kusum Perera and her team.</p>
       </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-              Stemora’s
-            </div>
-            <p>Petals With a Purpose.</p>
-          </div>
-          <div>
-            <p class="footer-heading">Pages</p>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Shop</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="order.html">Order</a></li>
-            </ul>
-          </div>
-          <div>
-            <p class="footer-heading">Info</p>
-            <ul class="footer-links">
-              <li><a href="#">Shipping</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <p class="footer-heading">Contact</p>
-            <p><span>✉</span> hello@stemoras.com</p>
-            <p><span>📱</span> +1 (555) 012-3456</p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>© 2025 Stemora’s. All rights reserved.</p>
-          <p>Handmade with love ✿</p>
-        </div>
+      <div>
+        <p class="ft-hed">Pages</p>
+        <ul class="ft-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Shop</a></li><li><a href="about.html" style="color:var(--accent)">About Us</a></li><li><a href="order.html">Order</a></li></ul>
       </div>
-    </footer>
+      <div>
+        <p class="ft-hed">Info</p>
+        <ul class="ft-links"><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul>
+      </div>
+      <div class="ft-contact">
+        <p class="ft-hed">Contact</p>
+        <p><span>&#10003;</span> hello@bloomytwists.lk</p>
+        <p><span>&#128241;</span> +94 77 000 0000</p>
+        <p><span>&#128205;</span> Gampaha, Sri Lanka</p>
+        <p><span>&#9200;</span> Mon&ndash;Sat &middot; 9 AM &ndash; 6 PM</p>
+      </div>
+    </div>
+    <div class="ft-bot"><p>&copy; 2026 Bloomy Twists. All rights reserved.</p><p>Handcrafted with &#10084;&#65039; in Sri Lanka</p></div>
+  </div>
+</footer>
 
-    <div class="toast"><span class="toast-icon"></span><span></span></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<script>
+/* 1. DARK/LIGHT THEME */
+const TKEY='bt-theme',root=document.documentElement;
+const SUN=`<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2zm0 19h2v3h-2zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05zm13.435 13.435 1.414-1.414 2.121 2.121-1.414 1.414zm2.121-14.85 1.414 1.415-2.121 2.121-1.414-1.414zm-14.142 14.85-1.414-1.414 2.121-2.121 1.414 1.414zM23 11v2h-3v-2zm-19 0v2H1v-2z"/></svg>`;
+const MOON=`<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8C12.9 3.04 12.46 3 12 3z"/></svg>`;
+function applyTheme(t){
+  root.setAttribute('data-theme',t);
+  const b=document.getElementById('theme-toggle');
+  if(b){b.innerHTML=t==='dark'?SUN:MOON;b.title=t==='dark'?'Light mode':'Dark mode';}
+}
+function getTheme(){return localStorage.getItem(TKEY)||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+applyTheme(getTheme());
+document.getElementById('theme-toggle').addEventListener('click',()=>{
+  const n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  localStorage.setItem(TKEY,n);applyTheme(n);
+});
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change',e=>{if(!localStorage.getItem(TKEY))applyTheme(e.matches?'dark':'light');});
+
+/* 2. NAVBAR SCROLL */
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>32),{passive:true});
+
+/* 3. MOBILE MENU */
+const ham=document.getElementById('ham-btn'),mob=document.getElementById('mob-menu');
+ham.addEventListener('click',()=>{mob.classList.toggle('open');ham.setAttribute('aria-expanded',mob.classList.contains('open'));});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mob.contains(e.target))mob.classList.remove('open');});
+
+/* 4. SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.11,rootMargin:'0px 0px -48px 0px'});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+/* 5. FLOATING PETALS */
+(function(){
+  const c=document.getElementById('petals');
+  if(!c||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const syms=['✿','❀','✽','❁','✾','✸'],count=innerWidth<640?10:20;
+  const colours=['var(--r100)','var(--r300)','var(--r500)'];
+  for(let i=0;i<count;i++){
+    const el=document.createElement('span');
+    el.className='petal';el.textContent=syms[i%syms.length];
+    const left=Math.random()*100,dur=(Math.random()*10+9).toFixed(1),dly=(Math.random()*-18).toFixed(1),dx=((Math.random()-.5)*130).toFixed(0),size=(Math.random()*.6+.75).toFixed(2);
+    el.style.cssText=`left:${left}%;bottom:-6%;font-size:${size}rem;color:${colours[i%3]};--dur:${dur}s;--dly:${dly}s;--dx:${dx}px;`;
+    c.appendChild(el);
+  }
+})();
+
+/* 6. AUTO-STAGGER grid cards */
+document.querySelectorAll('.g4').forEach(g=>{
+  g.querySelectorAll(':scope>.reveal').forEach((el,i)=>{
+    if(![...el.classList].some(c=>c.startsWith('sd')))el.style.transitionDelay=`${i*.1}s`;
+  });
+});
+</script>
+</body>
 </html>
