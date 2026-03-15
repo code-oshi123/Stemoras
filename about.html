@@ -1,305 +1,526 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us — Stemora’s</title>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Stemora’s
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Shop</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="order.html">Order</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
-      <a href="order.html" class="cart-wrap">
-        <button class="btn btn-primary btn-sm">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
-          Cart
-        </button>
-        <span class="cart-count">0</span>
-      </a>
-      <button class="menu-btn" id="menu-btn" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-      </button>
-    </div>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="products.html">Shop</a>
-  <a href="about.html">About</a>
-  <a href="order.html">Order</a>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="container">
-    <p class="section-eyebrow reveal">Our story</p>
-    <h1 class="section-title reveal reveal-delay-1">Made by hand,<br/>given with love.</h1>
-    <p class="section-subtitle reveal reveal-delay-2" style="margin:0 auto;">We started with a single flower and a dream. Now we make hundreds, one twist at a time.</p>
-  </div>
-</div>
-
-<!-- STORY SECTION -->
-<section class="section">
-  <div class="container">
-    <div class="about-split">
-      <div class="about-img-wrap reveal">
-        <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc22?w=700&q=85" alt="Handmaking flowers"/>
-        <div class="about-img-accent">
-          <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80" alt="Close up bloom"/>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p class="section-eyebrow">How it began</p>
-        <h2 class="section-title" style="font-size:clamp(2rem,4vw,2.75rem);">A quiet craft, a lasting bloom.</h2>
-        <div class="divider mt-4 mb-6"></div>
-        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:1rem;">
-          Stemora’s began at a kitchen table in 2021. Our founder, Clara, had always been passionate about craft — and when she discovered that pipe cleaners could be coaxed into gorgeous, detailed flowers, she couldn't stop making them.
-        </p>
-        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:1rem;">
-          What started as handmade gifts for friends and family quickly grew into something more. People kept asking: <em>"Where did you get that flower?"</em> The answer was always the same — she made it.
-        </p>
-        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:2rem;">
-          Today, Stemora’s ships to customers across the country. Every single flower is still made by hand, with the same care and attention that went into that very first bloom on that kitchen table.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <span class="badge badge-soft">Est. 2021</span>
-          <span class="badge badge-outline">100% Handmade</span>
-          <span class="badge badge-outline">500+ Happy Customers</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="section-sm" style="background:var(--bg-muted);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.5rem;text-align:center;">
-      <div class="stat-item reveal">
-        <div class="stat-number counter" data-target="500" data-suffix="+">0+</div>
-        <div class="stat-label">Orders fulfilled</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-number counter" data-target="30" data-suffix="+">0+</div>
-        <div class="stat-label">Unique designs</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-number counter" data-target="4" data-suffix=" yrs">0</div>
-        <div class="stat-label">Years of crafting</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-3">
-        <div class="stat-number counter" data-target="100" data-suffix="%">0%</div>
-        <div class="stat-label">Handmade, always</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VALUES -->
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="about-split">
-      <div>
-        <p class="section-eyebrow reveal">What we stand for</p>
-        <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,2.75rem);">Our values</h2>
-        <div class="divider mt-4 mb-8 reveal reveal-delay-1"></div>
-        <div class="value-list">
-          <div class="value-item reveal reveal-delay-1">
-            <div class="value-icon">✿</div>
-            <div class="value-text">
-              <h4>Slow Craft</h4>
-              <p>We never rush. Good flowers take time, patience, and practice.</p>
-            </div>
-          </div>
-          <div class="value-item reveal reveal-delay-2">
-            <div class="value-icon">∞</div>
-            <div class="value-text">
-              <h4>Built to Last</h4>
-              <p>Every bloom is made to outlast real flowers — they're heirlooms in disguise.</p>
-            </div>
-          </div>
-          <div class="value-item reveal reveal-delay-3">
-            <div class="value-icon">⬡</div>
-            <div class="value-text">
-              <h4>Colour-Forward</h4>
-              <p>We believe colour is emotional. We take colour choices seriously on every order.</p>
-            </div>
-          </div>
-          <div class="value-item reveal reveal-delay-4">
-            <div class="value-icon">◎</div>
-            <div class="value-text">
-              <h4>Personal Service</h4>
-              <p>You'll always speak to a real person. No bots, no auto-replies.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Process steps -->
-      <div>
-        <p class="section-eyebrow reveal">How we work</p>
-        <h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(2rem,4vw,2.75rem);">From wire to wonder</h2>
-        <div class="divider mt-4 mb-8 reveal reveal-delay-1"></div>
-        <div style="display:flex;flex-direction:column;gap:0;" class="reveal reveal-delay-2">
-
-          <div style="display:flex;gap:1.25rem;">
-            <div style="display:flex;flex-direction:column;align-items:center;">
-              <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-              <div style="width:2px;flex:1;background:var(--border);margin:.5rem 0;min-height:2.5rem;"></div>
-            </div>
-            <div style="padding-bottom:1.75rem;">
-              <h4 style="font-size:.95rem;font-weight:600;margin-bottom:.3rem;">You choose your blooms</h4>
-              <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;">Browse our catalogue or submit a fully custom brief. Any colour, any style.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:1.25rem;">
-            <div style="display:flex;flex-direction:column;align-items:center;">
-              <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-              <div style="width:2px;flex:1;background:var(--border);margin:.5rem 0;min-height:2.5rem;"></div>
-            </div>
-            <div style="padding-bottom:1.75rem;">
-              <h4 style="font-size:.95rem;font-weight:600;margin-bottom:.3rem;">We confirm & quote</h4>
-              <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;">Within 24 hours, we'll reach out with a price, timeline, and any questions.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:1.25rem;">
-            <div style="display:flex;flex-direction:column;align-items:center;">
-              <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-              <div style="width:2px;flex:1;background:var(--border);margin:.5rem 0;min-height:2.5rem;"></div>
-            </div>
-            <div style="padding-bottom:1.75rem;">
-              <h4 style="font-size:.95rem;font-weight:600;margin-bottom:.3rem;">Handcrafted to order</h4>
-              <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;">Your flowers are twisted, shaped, and finished with care — never rushed.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:1.25rem;">
-            <div style="display:flex;flex-direction:column;align-items:center;">
-              <div style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);border:2px solid var(--accent);color:var(--accent);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-            </div>
-            <div>
-              <h4 style="font-size:.95rem;font-weight:600;margin-bottom:.3rem;">Delivered to your door</h4>
-              <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6;">Gift-wrapped and shipped within 3–5 business days. Always with a personal note.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="section" style="background:var(--bg-muted);border-top:1px solid var(--border);">
-  <div class="container">
-    <div class="text-center mb-12 reveal">
-      <p class="section-eyebrow">The makers</p>
-      <h2 class="section-title">Meet the team</h2>
-      <p class="section-subtitle" style="margin:0 auto;">Small team, big heart. Every order passes through their hands.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-avatar">✿</div>
-        <div class="team-name">Clara Muse</div>
-        <div class="team-role">Founder & Lead Maker</div>
-        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.6;">The original twister. Clara started it all at her kitchen table in 2021.</p>
-      </div>
-      <div class="team-card reveal reveal-delay-1">
-        <div class="team-avatar">❀</div>
-        <div class="team-name">Tom Reed</div>
-        <div class="team-role">Colour Specialist</div>
-        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.6;">Tom handles every custom colour request with obsessive precision.</p>
-      </div>
-      <div class="team-card reveal reveal-delay-2">
-        <div class="team-avatar">✾</div>
-        <div class="team-name">Sara Lin</div>
-        <div class="team-role">Packing & Dispatch</div>
-        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.6;">Sara ensures every order leaves perfectly wrapped and on time.</p>
-      </div>
-      <div class="team-card reveal reveal-delay-3">
-        <div class="team-avatar">❁</div>
-        <div class="team-name">Jay Park</div>
-        <div class="team-role">Customer Care</div>
-        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.6;">Jay makes sure every customer feels heard, valued, and delighted.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section">
-  <div class="container text-center">
-    <div class="reveal" style="max-width:480px;margin:0 auto;">
-      <p class="section-eyebrow">Join us</p>
-      <h2 class="section-title">Ready to own a bloom?</h2>
-      <p style="color:var(--text-muted);margin:.75rem 0 2rem;font-size:.95rem;line-height:1.7;">
-        Browse our full catalogue or place a custom order. We'd love to make something special for you.
-      </p>
-      <div class="flex flex-wrap gap-4" style="justify-content:center;">
-        <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
-        <a href="order.html" class="btn btn-outline btn-lg">Custom Order</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Bloomy Twists</title>
+  </head>
+  <body class="bg-[var(--bg-base)] text-[var(--text-primary)]">
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
           Stemora’s
-        </div>
-        <p>Petals With a Purpose.</p>
-      </div>
-      <div>
-        <p class="footer-heading">Pages</p>
-        <ul class="footer-links">
+        </a>
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="order.html">Order</a></li>
         </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" aria-label="Toggle theme"></button>
+          <a href="order.html" class="cart-wrap">
+            <button class="btn btn-primary btn-sm">
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"
+                />
+              </svg>
+              Cart
+            </button>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="menu-btn" id="menu-btn" aria-label="Menu">
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 12h18M3 6h18M3 18h18" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div>
-        <p class="footer-heading">Info</p>
-        <ul class="footer-links">
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <p class="footer-heading">Contact</p>
-        <p><span>✉</span> hello@stemoras.com</p>
-        <p><span>📱</span> +1 (555) 012-3456</p>
-      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="order.html">Order</a>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Stemora’s. All rights reserved.</p>
-      <p>Handmade with love ✿</p>
-    </div>
-  </div>
-</footer>
 
-<div class="toast"><span class="toast-icon"></span><span></span></div>
+    <!-- HERO SECTION -->
+    <section
+      class="section pt-32 pb-16 relative overflow-hidden"
+      style="
+        background: radial-gradient(circle at top left, #ffe4f1 0, transparent 55%),
+                    radial-gradient(circle at top right, #e9ddff 0, transparent 55%),
+                    var(--bg-base);
+      "
+    >
+      <div class="container relative z-10">
+        <div class="max-w-3xl mx-auto text-center reveal">
+          <p class="section-eyebrow text-[var(--accent)]">Our Story</p>
+          <h1
+            class="section-title text-[clamp(2.3rem,4vw,3.2rem)] text-[var(--text-primary)] mb-4"
+          >
+            About Bloomy Twists
+          </h1>
+          <p class="section-subtitle text-base md:text-lg">
+            Handmade flowers crafted with love in Sri Lanka.
+          </p>
+        </div>
+
+        <div
+          class="mt-10 grid gap-6 md:grid-cols-3 max-w-4xl mx-auto text-sm text-[var(--text-muted)]"
+        >
+          <div
+            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-1"
+          >
+            ✿ Soft pipe-cleaner petals, inspired by real blooms.
+          </div>
+          <div
+            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-2"
+          >
+            ❀ A cosy craft studio in Gampaha, Sri Lanka.
+          </div>
+          <div
+            class="rounded-2xl bg-white/80 md:bg-white/60 border border-[var(--border)] px-5 py-4 shadow-sm backdrop-blur-sm reveal reveal-delay-3"
+          >
+            ✾ Flowers that never fade, made for meaningful gifts.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section py-12 md:py-16">
+      <div class="container max-w-5xl">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <p class="section-eyebrow">Bloomy Twists in Sri Lanka</p>
+            <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)] mb-4">
+              Crafted from a small dream in Gampaha.
+            </h2>
+            <p class="section-subtitle mb-4">
+              Bloomy Twists was founded in 2026 in Gampaha, Sri Lanka. What began as a simple
+              hobby quickly grew into a cosy handmade flower shop.
+            </p>
+            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-3">
+              Our founder, Kusum Perera, has always loved creating handmade crafts, especially pipe
+              cleaner flowers. Each new bloom started as a curious experiment — twisting, shaping
+              and layering soft stems until they looked like real petals.
+            </p>
+            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed mb-3">
+              As friends, neighbours and family started requesting her creations for birthdays,
+              weddings and home decor, Bloomy Twists slowly turned into a small business filled with
+              colour and heart.
+            </p>
+            <p class="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed">
+              Every flower is carefully designed and handcrafted to bring beauty that never fades.
+              Bloomy Twists exists to share these unique handmade flowers with people who want
+              meaningful gifts and decorations that feel personal and lasting.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div
+              class="relative rounded-3xl bg-gradient-to-br from-pink-100 via-rose-50 to-purple-100 p-1 shadow-[0_18px_45px_rgba(244,114,182,0.35)]"
+            >
+              <div
+                class="rounded-3xl overflow-hidden bg-white flex items-center justify-center h-full min-h-[260px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1490750967868-88df5691cc22?w=700&q=85"
+                  alt="Handmade pipe-cleaner flowers"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div
+                class="absolute -bottom-6 -left-4 bg-white/90 border border-[var(--border)] rounded-2xl px-4 py-3 shadow-md text-xs md:text-sm flex items-center gap-3"
+              >
+                <span class="text-lg">🌸</span>
+                <div>
+                  <p class="font-semibold text-[var(--text-primary)]">
+                    Flowers that never fade
+                  </p>
+                  <p class="text-[var(--text-muted)]">
+                    Made with soft stems and bright colours, one twist at a time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER & CO-FOUNDER -->
+    <section
+      class="section py-12 md:py-16"
+      style="background: linear-gradient(to bottom, #fff5fb, var(--bg-base));"
+    >
+      <div class="container max-w-5xl">
+        <div class="text-center mb-10 reveal">
+          <p class="section-eyebrow">The hearts behind Bloomy Twists</p>
+          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
+            Meet the makers
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Founder -->
+          <article
+            class="reveal group rounded-3xl bg-white border border-[var(--border)] shadow-[0_18px_40px_rgba(244,114,182,0.25)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(236,72,153,0.35)]"
+          >
+            <div class="flex flex-col h-full">
+              <div class="relative h-64 overflow-hidden">
+                <img
+                  src="public/founder-kusum.jpg"
+                  alt="Founder Kusum Perera"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-rose-500/50 via-transparent to-transparent opacity-60"
+                ></div>
+              </div>
+              <div class="p-6 md:p-7 flex-1 flex flex-col gap-3">
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-xl text-[var(--text-primary)]">
+                      Kusum Perera
+                    </h3>
+                    <p class="text-xs uppercase tracking-[0.18em] text-rose-500 font-semibold">
+                      Founder · Bloomy Twists
+                    </p>
+                  </div>
+                  <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-rose-100 text-rose-500 text-xl"
+                    >✿</span
+                  >
+                </div>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Kusum Perera is the creative heart behind Bloomy Twists. She designs and
+                  handcrafts each pipe cleaner flower bouquet with patience and creativity. Her love
+                  for handmade crafts turned a simple hobby into a colourful flower shop.
+                </p>
+                <p class="text-xs text-[var(--text-muted)]">
+                  Every bouquet carries a little piece of her story — hours of careful twisting,
+                  shaping and arranging until each flower feels just right.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Co‑Founder -->
+          <article
+            class="reveal reveal-delay-1 group rounded-3xl bg-white border border-[var(--border)] shadow-[0_16px_34px_rgba(129,140,248,0.22)] overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_52px_rgba(129,140,248,0.35)]"
+          >
+            <div class="flex flex-col h-full">
+              <div class="relative h-64 overflow-hidden">
+                <img
+                  src="public/cofounder-ushani.jpg"
+                  alt="Co‑Founder Ushani Perera"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-indigo-500/50 via-transparent to-transparent opacity-60"
+                ></div>
+              </div>
+              <div class="p-6 md:p-7 flex-1 flex flex-col gap-3">
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-xl text-[var(--text-primary)]">
+                      Ushani Perera
+                    </h3>
+                    <p class="text-xs uppercase tracking-[0.18em] text-indigo-500 font-semibold">
+                      Co‑Founder · Digital Studio
+                    </p>
+                  </div>
+                  <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 text-indigo-500 text-xl"
+                    >❀</span
+                  >
+                </div>
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Ushani Perera manages the digital side of Bloomy Twists. She developed the
+                  website, looks after marketing, and connects with customers online.
+                </p>
+                <p class="text-xs text-[var(--text-muted)]">
+                  Her goal is to gently bridge handmade craft with modern online shopping, so more
+                  people can discover the colourful bouquets created in their Sri Lankan studio.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE OUR FLOWERS -->
+    <section class="section py-12 md:py-16">
+      <div class="container max-w-5xl">
+        <div class="text-center mb-10 reveal">
+          <p class="section-eyebrow">Why people love our blooms</p>
+          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
+            Why choose our flowers
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="reveal group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+          >
+            <div
+              class="w-11 h-11 rounded-2xl bg-rose-100 text-rose-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+            >
+              ✿
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
+                Handmade with love
+              </h3>
+              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+                Every petal is twisted by hand in our home studio, not mass‑produced in a factory.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="reveal reveal-delay-1 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+          >
+            <div
+              class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+            >
+              ♾
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
+                Long‑lasting flowers
+              </h3>
+              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+                No watering, no wilting — just soft, colourful flowers that keep their shape for
+                years.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="reveal reveal-delay-2 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+          >
+            <div
+              class="w-11 h-11 rounded-2xl bg-violet-100 text-violet-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+            >
+              ✨
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
+                Unique handmade designs
+              </h3>
+              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+                No two bouquets are exactly the same — each one carries its own little personality.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="reveal reveal-delay-3 group rounded-2xl border border-[var(--border)] bg-white/80 shadow-md px-5 py-6 flex gap-4 items-start transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+          >
+            <div
+              class="w-11 h-11 rounded-2xl bg-amber-100 text-amber-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+            >
+              🎁
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-[var(--text-primary)] mb-1">
+                Perfect for gifts & decor
+              </h3>
+              <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+                Thoughtful presents for birthdays, anniversaries, desks and cosy corners at home.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK PROCESS -->
+    <section
+      class="section py-12 md:py-16"
+      style="background: linear-gradient(to right, #fdf2ff, #fefcf9);"
+    >
+      <div class="container max-w-5xl">
+        <div class="text-center mb-10 reveal">
+          <p class="section-eyebrow">How your flowers are made</p>
+          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)]">
+            Our work process
+          </h2>
+        </div>
+
+        <div
+          class="grid gap-6 md:grid-cols-4 text-center text-xs md:text-sm text-[var(--text-secondary)]"
+        >
+          <div
+            class="reveal flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center text-lg mb-1"
+            >
+              1
+            </div>
+            <h3 class="font-semibold text-[var(--text-primary)]">
+              Design idea
+            </h3>
+            <p class="leading-relaxed">
+              We sketch colour palettes and bouquet shapes inspired by real flowers.
+            </p>
+          </div>
+
+          <div
+            class="reveal reveal-delay-1 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-purple-100 text-purple-500 flex items-center justify-center text-lg mb-1"
+            >
+              2
+            </div>
+            <h3 class="font-semibold text-[var(--text-primary)]">
+              Handmade crafting
+            </h3>
+            <p class="leading-relaxed">
+              Pipe cleaners are twisted, layered and fluffed by hand to form soft petals.
+            </p>
+          </div>
+
+          <div
+            class="reveal reveal-delay-2 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center text-lg mb-1"
+            >
+              3
+            </div>
+            <h3 class="font-semibold text-[var(--text-primary)]">
+              Quality checking
+            </h3>
+            <p class="leading-relaxed">
+              Each bouquet is checked for shape, colour balance and tiny finishing details.
+            </p>
+          </div>
+
+          <div
+            class="reveal reveal-delay-3 flex flex-col items-center gap-3 rounded-2xl bg-white/90 border border-[var(--border)] px-4 py-6 shadow-sm"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center text-lg mb-1"
+            >
+              4
+            </div>
+            <h3 class="font-semibold text-[var(--text-primary)]">
+              Delivery to customers
+            </h3>
+            <p class="leading-relaxed">
+              Bouquets are carefully packaged and sent to your door, ready to gift or display.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section py-12 md:py-16">
+      <div class="container max-w-4xl">
+        <div
+          class="reveal rounded-3xl border border-[var(--border)] bg-gradient-to-r from-rose-50 via-purple-50 to-amber-50 shadow-[0_20px_50px_rgba(244,114,182,0.25)] px-6 py-10 md:px-10 md:py-12 text-center"
+        >
+          <p class="section-eyebrow mb-2">Ready to browse?</p>
+          <h2 class="section-title text-[clamp(2rem,3vw,2.6rem)] mb-3">
+            Discover flowers that never fade.
+          </h2>
+          <p class="section-subtitle mb-6 max-w-xl mx-auto">
+            Explore our collection of handmade pipe cleaner flowers — crafted in Sri Lanka, shipped
+            with care, and perfect for gifting or decorating your favourite spaces.
+          </p>
+          <a href="products.html" class="btn btn-primary btn-lg">
+            Shop Our Flowers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              Stemora’s
+            </div>
+            <p>Petals With a Purpose.</p>
+          </div>
+          <div>
+            <p class="footer-heading">Pages</p>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="order.html">Order</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-heading">Info</p>
+            <ul class="footer-links">
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <p class="footer-heading">Contact</p>
+            <p><span>✉</span> hello@stemoras.com</p>
+            <p><span>📱</span> +1 (555) 012-3456</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Stemora’s. All rights reserved.</p>
+          <p>Handmade with love ✿</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast"><span class="toast-icon"></span><span></span></div>
     <script type="module" src="/src/main.js"></script>
-</body>
+  </body>
 </html>
