@@ -2,7 +2,7 @@ import './style.css'
 
 
 /* ============================================================
-   Bloomy Twists — main.js
+   Stemora’s — Petals With a Purpose
    ============================================================ */
 
 'use strict';
